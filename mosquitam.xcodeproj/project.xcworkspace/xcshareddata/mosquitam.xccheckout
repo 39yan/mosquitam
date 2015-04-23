@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>98EF4B4F-34E3-4229-A980-58CB3EEBC46F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>mosquitam</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>859604A16732327312D0FDDB90C48917DCFBEE5E</key>
+		<string>https://github.com/39yan/mosquitam.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>mosquitam.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>859604A16732327312D0FDDB90C48917DCFBEE5E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/39yan/mosquitam.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>859604A16732327312D0FDDB90C48917DCFBEE5E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>859604A16732327312D0FDDB90C48917DCFBEE5E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>mosquitam</string>
+		</dict>
+	</array>
+</dict>
+</plist>

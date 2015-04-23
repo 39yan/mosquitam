@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB12C5661A9DD0CC00A06D25 /* PlusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB12C5651A9DD0CC00A06D25 /* PlusViewController.m */; };
+		DB3CB77D1AE8D2D900B1827F /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB3CB77C1AE8D2D900B1827F /* icon@2x.png */; };
+		DB6BCF1C1A8A20F1003293C4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6BCF1B1A8A20F1003293C4 /* AudioToolbox.framework */; };
+		DB8448EE1A7C912500D645CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8448ED1A7C912500D645CB /* main.m */; };
+		DB8448F11A7C912500D645CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8448F01A7C912500D645CB /* AppDelegate.m */; };
+		DB8448F41A7C912500D645CB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8448F31A7C912500D645CB /* ViewController.m */; };
+		DB8448F71A7C912500D645CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB8448F51A7C912500D645CB /* Main.storyboard */; };
+		DB8448F91A7C912500D645CB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB8448F81A7C912500D645CB /* Images.xcassets */; };
+		DB8449081A7C912500D645CB /* mosquitamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB8449071A7C912500D645CB /* mosquitamTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB8449021A7C912500D645CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB8448E01A7C912500D645CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB8448E71A7C912500D645CB;
+			remoteInfo = mosquitam;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB12C5641A9DD0CC00A06D25 /* PlusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlusViewController.h; sourceTree = "<group>"; };
+		DB12C5651A9DD0CC00A06D25 /* PlusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlusViewController.m; sourceTree = "<group>"; };
+		DB3CB77C1AE8D2D900B1827F /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		DB6BCF1B1A8A20F1003293C4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DB8448E81A7C912500D645CB /* mosquitam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mosquitam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8448EC1A7C912500D645CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB8448ED1A7C912500D645CB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DB8448EF1A7C912500D645CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DB8448F01A7C912500D645CB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DB8448F21A7C912500D645CB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DB8448F31A7C912500D645CB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DB8448F61A7C912500D645CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB8448F81A7C912500D645CB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DB8449011A7C912500D645CB /* mosquitamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mosquitamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8449061A7C912500D645CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB8449071A7C912500D645CB /* mosquitamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mosquitamTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB8448E51A7C912500D645CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB6BCF1C1A8A20F1003293C4 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8448FE1A7C912500D645CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB12C5631A9DC6C200A06D25 /* Plus */ = {
+			isa = PBXGroup;
+			children = (
+				DB12C5641A9DD0CC00A06D25 /* PlusViewController.h */,
+				DB12C5651A9DD0CC00A06D25 /* PlusViewController.m */,
+			);
+			name = Plus;
+			sourceTree = "<group>";
+		};
+		DB6981DB1AE8CB820032EAB4 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				DB3CB77C1AE8D2D900B1827F /* icon@2x.png */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
+		DB6BCF1D1A934905003293C4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DB8448F21A7C912500D645CB /* ViewController.h */,
+				DB8448F31A7C912500D645CB /* ViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		DB8448DF1A7C912500D645CB = {
+			isa = PBXGroup;
+			children = (
+				DB8448EA1A7C912500D645CB /* mosquitam */,
+				DB8449041A7C912500D645CB /* mosquitamTests */,
+				DB8448E91A7C912500D645CB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB8448E91A7C912500D645CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB8448E81A7C912500D645CB /* mosquitam.app */,
+				DB8449011A7C912500D645CB /* mosquitamTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB8448EA1A7C912500D645CB /* mosquitam */ = {
+			isa = PBXGroup;
+			children = (
+				DB8448EF1A7C912500D645CB /* AppDelegate.h */,
+				DB8448F01A7C912500D645CB /* AppDelegate.m */,
+				DB8448F51A7C912500D645CB /* Main.storyboard */,
+				DB6BCF1D1A934905003293C4 /* Home */,
+				DB12C5631A9DC6C200A06D25 /* Plus */,
+				DB6981DB1AE8CB820032EAB4 /* image */,
+				DB6BCF1B1A8A20F1003293C4 /* AudioToolbox.framework */,
+				DB8448F81A7C912500D645CB /* Images.xcassets */,
+				DB8448EB1A7C912500D645CB /* Supporting Files */,
+			);
+			path = mosquitam;
+			sourceTree = "<group>";
+		};
+		DB8448EB1A7C912500D645CB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB8448EC1A7C912500D645CB /* Info.plist */,
+				DB8448ED1A7C912500D645CB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB8449041A7C912500D645CB /* mosquitamTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB8449071A7C912500D645CB /* mosquitamTests.m */,
+				DB8449051A7C912500D645CB /* Supporting Files */,
+			);
+			path = mosquitamTests;
+			sourceTree = "<group>";
+		};
+		DB8449051A7C912500D645CB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB8449061A7C912500D645CB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB8448E71A7C912500D645CB /* mosquitam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB84490B1A7C912500D645CB /* Build configuration list for PBXNativeTarget "mosquitam" */;
+			buildPhases = (
+				DB8448E41A7C912500D645CB /* Sources */,
+				DB8448E51A7C912500D645CB /* Frameworks */,
+				DB8448E61A7C912500D645CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mosquitam;
+			productName = mosquitam;
+			productReference = DB8448E81A7C912500D645CB /* mosquitam.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB8449001A7C912500D645CB /* mosquitamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB84490E1A7C912500D645CB /* Build configuration list for PBXNativeTarget "mosquitamTests" */;
+			buildPhases = (
+				DB8448FD1A7C912500D645CB /* Sources */,
+				DB8448FE1A7C912500D645CB /* Frameworks */,
+				DB8448FF1A7C912500D645CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB8449031A7C912500D645CB /* PBXTargetDependency */,
+			);
+			name = mosquitamTests;
+			productName = mosquitamTests;
+			productReference = DB8449011A7C912500D645CB /* mosquitamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB8448E01A7C912500D645CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Carmine;
+				TargetAttributes = {
+					DB8448E71A7C912500D645CB = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					DB8449001A7C912500D645CB = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = DB8448E71A7C912500D645CB;
+					};
+				};
+			};
+			buildConfigurationList = DB8448E31A7C912500D645CB /* Build configuration list for PBXProject "mosquitam" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB8448DF1A7C912500D645CB;
+			productRefGroup = DB8448E91A7C912500D645CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB8448E71A7C912500D645CB /* mosquitam */,
+				DB8449001A7C912500D645CB /* mosquitamTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB8448E61A7C912500D645CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8448F71A7C912500D645CB /* Main.storyboard in Resources */,
+				DB8448F91A7C912500D645CB /* Images.xcassets in Resources */,
+				DB3CB77D1AE8D2D900B1827F /* icon@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8448FF1A7C912500D645CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB8448E41A7C912500D645CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8448F41A7C912500D645CB /* ViewController.m in Sources */,
+				DB8448F11A7C912500D645CB /* AppDelegate.m in Sources */,
+				DB8448EE1A7C912500D645CB /* main.m in Sources */,
+				DB12C5661A9DD0CC00A06D25 /* PlusViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB8448FD1A7C912500D645CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB8449081A7C912500D645CB /* mosquitamTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB8449031A7C912500D645CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB8448E71A7C912500D645CB /* mosquitam */;
+			targetProxy = DB8449021A7C912500D645CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB8448F51A7C912500D645CB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB8448F61A7C912500D645CB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB8449091A7C912500D645CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DB84490A1A7C912500D645CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB84490C1A7C912500D645CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = mosquitam/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DB84490D1A7C912500D645CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = mosquitam/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DB84490F1A7C912500D645CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = mosquitamTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mosquitam.app/mosquitam";
+			};
+			name = Debug;
+		};
+		DB8449101A7C912500D645CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = mosquitamTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mosquitam.app/mosquitam";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB8448E31A7C912500D645CB /* Build configuration list for PBXProject "mosquitam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB8449091A7C912500D645CB /* Debug */,
+				DB84490A1A7C912500D645CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB84490B1A7C912500D645CB /* Build configuration list for PBXNativeTarget "mosquitam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB84490C1A7C912500D645CB /* Debug */,
+				DB84490D1A7C912500D645CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB84490E1A7C912500D645CB /* Build configuration list for PBXNativeTarget "mosquitamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB84490F1A7C912500D645CB /* Debug */,
+				DB8449101A7C912500D645CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB8448E01A7C912500D645CB /* Project object */;
+}
