@@ -28,6 +28,9 @@
     fqcStr = [NSString stringWithFormat:@"%d", fqc];
     fqcLabel.text = fqcStr;
     
+    //離した時
+    [fqcSlider addTarget:self action:@selector(stopSound) forControlEvents:(UIControlEventTouchUpInside | UIControlEventTouchUpOutside | UIControlEventTouchCancel)];
+    
 }
 
 
@@ -84,6 +87,8 @@
     _frequency = sender.value;
     fqcLabel.text = [NSString stringWithFormat:@"%.1f", _frequency];
     fqcStr = [NSString stringWithFormat:@"%.1f", _frequency];
+    [self playSound];
+    
 }
 
 
@@ -163,7 +168,6 @@
     [saveDataDictionary setObject:[NSNumber numberWithBool:fdinBool] forKey:@"fdinKey"];
     
     [saveDataDictionary setObject:[NSNumber numberWithInteger:dayFlags] forKey:@"dayFlags"]; //tag3
-    
     [saveDataDictionary setObject:timeStr forKey:@"timeKey"]; //tag:2
 #ifdef DEBUG
     NSLog(@"%@",saveDataDictionary);
@@ -184,70 +188,70 @@
     
 }
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    //2遷移
-//    if ([segue.identifier isEqualToString:@"plusAlarm"]) {
-//        //渡す(?)
-//    }
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    //2遷移
+    if ([segue.identifier isEqualToString:@"plusAlarm"]) {
+        //渡す(?)
+    }
+}
 
 
-//-(IBAction)playSound{
-//    if (!aU) {
-//        //Sampling rate
-//        _sampleRate = 44100.0f;
-//        
-//        //Bit rate
-//        bitRate = 8;  // 8bit
-//        
-//        //AudioComponentDescription
-//        AudioComponentDescription aCD;
-//        aCD.componentType = kAudioUnitType_Output;
-//        aCD.componentSubType = kAudioUnitSubType_RemoteIO;
-//        aCD.componentManufacturer = kAudioUnitManufacturer_Apple;
-//        aCD.componentFlags = 0;
-//        aCD.componentFlagsMask = 0;
-//        
-//        //AudioComponent
-//        AudioComponent aC = AudioComponentFindNext(NULL, &aCD);
-//        AudioComponentInstanceNew(aC, &aU);
-//        AudioUnitInitialize(aU);
-//        
-//        //コールバック
-//        AURenderCallbackStruct callbackStruct;
-//        callbackStruct.inputProc = renderer;
-//        callbackStruct.inputProcRefCon = (__bridge void*)self;
-//        AudioUnitSetProperty(aU,
-//                             kAudioUnitProperty_SetRenderCallback,
-//                             kAudioUnitScope_Input,
-//                             0,
-//                             &callbackStruct,
-//                             sizeof(AURenderCallbackStruct));
-//        
-//        //AudioStreamBasicDescription
-//        AudioStreamBasicDescription aSBD;
-//        aSBD.mSampleRate = _sampleRate;
-//        aSBD.mFormatID = kAudioFormatLinearPCM;
-//        aSBD.mFormatFlags = kAudioFormatFlagsAudioUnitCanonical;
-//        aSBD.mChannelsPerFrame = 2;
-//        aSBD.mBytesPerPacket = sizeof(AudioUnitSampleType);
-//        aSBD.mBytesPerFrame = sizeof(AudioUnitSampleType);
-//        aSBD.mFramesPerPacket = 1;
-//        aSBD.mBitsPerChannel = bitRate * sizeof(AudioUnitSampleType);
-//        aSBD.mReserved = 0;
-//        
-//        //AudioUnit
-//        AudioUnitSetProperty(aU,
-//                             kAudioUnitProperty_StreamFormat,
-//                             kAudioUnitScope_Input,
-//                             0,
-//                             &aSBD,
-//                             sizeof(aSBD));
-//        
-//        //再生
-//        AudioOutputUnitStart(aU);
-//    }
-//}
+-(void)playSound{
+    if (!aU) {
+        //Sampling rate
+        _sampleRate = 44100.0f;
+        
+        //Bit rate
+        bitRate = 8;  // 8bit
+        
+        //AudioComponentDescription
+        AudioComponentDescription aCD;
+        aCD.componentType = kAudioUnitType_Output;
+        aCD.componentSubType = kAudioUnitSubType_RemoteIO;
+        aCD.componentManufacturer = kAudioUnitManufacturer_Apple;
+        aCD.componentFlags = 0;
+        aCD.componentFlagsMask = 0;
+        
+        //AudioComponent
+        AudioComponent aC = AudioComponentFindNext(NULL, &aCD);
+        AudioComponentInstanceNew(aC, &aU);
+        AudioUnitInitialize(aU);
+        
+        //コールバック
+        AURenderCallbackStruct callbackStruct;
+        callbackStruct.inputProc = renderer;
+        callbackStruct.inputProcRefCon = (__bridge void*)self;
+        AudioUnitSetProperty(aU,
+                             kAudioUnitProperty_SetRenderCallback,
+                             kAudioUnitScope_Input,
+                             0,
+                             &callbackStruct,
+                             sizeof(AURenderCallbackStruct));
+        
+        //AudioStreamBasicDescription
+        AudioStreamBasicDescription aSBD;
+        aSBD.mSampleRate = _sampleRate;
+        aSBD.mFormatID = kAudioFormatLinearPCM;
+        aSBD.mFormatFlags = kAudioFormatFlagsAudioUnitCanonical;
+        aSBD.mChannelsPerFrame = 2;
+        aSBD.mBytesPerPacket = sizeof(AudioUnitSampleType);
+        aSBD.mBytesPerFrame = sizeof(AudioUnitSampleType);
+        aSBD.mFramesPerPacket = 1;
+        aSBD.mBitsPerChannel = bitRate * sizeof(AudioUnitSampleType);
+        aSBD.mReserved = 0;
+        
+        //AudioUnit
+        AudioUnitSetProperty(aU,
+                             kAudioUnitProperty_StreamFormat,
+                             kAudioUnitScope_Input,
+                             0,
+                             &aSBD,
+                             sizeof(aSBD));
+        
+        //再生
+        AudioOutputUnitStart(aU);
+    }
+}
 
 static OSStatus renderer(void *inRef,
                          AudioUnitRenderActionFlags *ioActionFlags,
@@ -280,10 +284,10 @@ static OSStatus renderer(void *inRef,
 
 
 
-//- (IBAction)stopSound
-//{
-//    AudioOutputUnitStop(aU);
-//    aU = nil;
-//}
+- (void)stopSound
+{
+    AudioOutputUnitStop(aU);
+    aU = nil;
+}
 
 @end

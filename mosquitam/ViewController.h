@@ -32,6 +32,9 @@
     
 }
 
++ (void)addLocalNotification;
+
+
 -(IBAction)editAction:(id)sender;
 -(IBAction)alarmLocalNotificationDidAppear:(id)sender;
 

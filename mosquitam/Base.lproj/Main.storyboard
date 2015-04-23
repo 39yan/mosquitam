@@ -126,6 +126,7 @@
                                 <rect key="frame" x="33" y="119" width="254" height="31"/>
                                 <connections>
                                     <action selector="changeFrequency:" destination="NfI-WK-mJU" eventType="valueChanged" id="aOM-FH-4Fq"/>
+                                    <action selector="stopSound" destination="NfI-WK-mJU" eventType="touchDragExit" id="MVr-Ir-6wr"/>
                                 </connections>
                             </slider>
                             <switch opaque="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1kA-ju-CUx">

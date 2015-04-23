@@ -61,23 +61,76 @@
 }
 
 
--(IBAction)alarmLocalNotificationDidAppear:(id)sender{
+//-(IBAction)alarmLocalNotificationDidAppear:(id)sender{
+//    
+//    //つくる
+//    alarmLocalNotification = [[UILocalNotification alloc] init];
+//    //じかん
+//    alarmLocalNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:(20)];
+//    //きじゅん
+//    alarmLocalNotification.timeZone = [NSTimeZone defaultTimeZone];
+//    //ぶんしょう
+//    alarmLocalNotification.alertBody = @"ああああああ";
+////    //さうんど
+////    alarmLocalNotification.soundName = /* モスキート音鳴らす */;
+//    
+//    //とうろく
+//    [[UIApplication sharedApplication] scheduleLocalNotification:alarmLocalNotification];
+//    
+//    
+//}
+//
+
++ (void)addLocalNotification
+{
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
     
-    //つくる
-    alarmLocalNotification = [[UILocalNotification alloc] init];
-    //じかん
-    alarmLocalNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:(20)];
-    //きじゅん
-    alarmLocalNotification.timeZone = [NSTimeZone defaultTimeZone];
-    //ぶんしょう
-    alarmLocalNotification.alertBody = @"ああああああ";
-//    //さうんど
-//    alarmLocalNotification.soundName = /* モスキート音鳴らす */;
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSArray *selectedWeek = [userDefaults arrayForKey:@"week"];
+    NSDate *notificationTime = [userDefaults objectForKey:@"time"];
     
-    //とうろく
-    [[UIApplication sharedApplication] scheduleLocalNotification:alarmLocalNotification];
+    NSInteger repeartCount = 7;
+    NSDate *today = [NSDate date];
+    NSDate *date;
+    NSString *dateString;
     
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *dateComponents;
     
+    /* autorelease #とは 
+     いらないやつのこと */
+    
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    format.dateFormat = @"yyyy-MM-dd hh:mm";
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    dateFormat.dateFormat = @"yyyy-MM-dd";
+    
+    NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
+    timeFormat.dateFormat = @"hh:mm";
+    
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    
+    for (NSInteger i = 0; i < repeartCount; i++) {
+        date = [today dateByAddingTimeInterval:i * 24 * 60 * 60];
+        dateComponents = [calendar components:NSWeekdayCalendarUnit fromDate:date];
+        
+        if ([selectedWeek containsObject:[NSNumber numberWithInteger:dateComponents.weekday - 1]]) {
+            // Adding the local notification.
+            dateString = [NSString stringWithFormat:@"%@ %@",
+                          [dateFormat stringFromDate:date],
+                          [timeFormat stringFromDate:notificationTime]];
+            
+            if ([today compare:[format dateFromString:dateString]] == NSOrderedAscending) {
+                notification.fireDate = [format dateFromString:dateString];
+                notification.timeZone = [NSTimeZone localTimeZone];
+                notification.alertBody = [NSString stringWithFormat:@"Notify:%@", dateString];
+                notification.soundName = UILocalNotificationDefaultSoundName;
+                notification.alertAction = @"Open";
+                [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+            }
+        }
+    }
 }
 
 

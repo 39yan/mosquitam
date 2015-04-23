@@ -10,14 +10,14 @@
 	<string>mosquitam</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>859604A16732327312D0FDDB90C48917DCFBEE5E</key>
+		<key>5607BD29874564D1F1C5B40E80C82260AF32391C</key>
 		<string>https://github.com/39yan/mosquitam.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>mosquitam.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>859604A16732327312D0FDDB90C48917DCFBEE5E</key>
+		<key>5607BD29874564D1F1C5B40E80C82260AF32391C</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>859604A16732327312D0FDDB90C48917DCFBEE5E</string>
+	<string>5607BD29874564D1F1C5B40E80C82260AF32391C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>859604A16732327312D0FDDB90C48917DCFBEE5E</string>
+			<string>5607BD29874564D1F1C5B40E80C82260AF32391C</string>
 			<key>IDESourceControlWCCName</key>
 			<string>mosquitam</string>
 		</dict>
