@@ -41,25 +41,30 @@
     [listView setDelegate:self];
 }
 
-//willじゃなくてdid
--(void)viewDidAppear:(BOOL)animated{
-    
-    [super viewDidAppear:animated];
-    
-    saveData = [NSUserDefaults standardUserDefaults];
-    
-    saveDataArray = [[saveData objectForKey:@"list"] mutableCopy];
 
-    if (!saveDataArray.count) {
-        
-        saveDataArray = [NSMutableArray array];
-    }
-#ifdef DEBUG
-    NSLog(@"%@",saveDataArray);
-#endif
-    [listView reloadData];
-}
-
+//
+////willじゃなくてdid
+//-(void)viewDidAppear:(BOOL)animated{
+//    
+//    [super viewDidAppear:animated];
+//    
+//    saveData = [NSUserDefaults standardUserDefaults];
+//    
+//    saveDataArray = [[saveData objectForKey:@"list"] mutableCopy];
+//
+//    if (!saveDataArray.count) {
+//        
+//        saveDataArray = [NSMutableArray array];
+//        
+//    }
+//    saveDataArray = [[saveData objectForKey:@"daysDataKey"] mutableCopy];
+//    
+//#ifdef DEBUG
+//    NSLog(@"%@",saveDataArray);
+//#endif
+//    [listView reloadData];
+//}
+//
 
 //-(IBAction)alarmLocalNotificationDidAppear:(id)sender{
 //    
@@ -167,37 +172,37 @@
 }
 */
 
-- (NSString *)changeIntegerToDayString:(NSInteger)dayNumber {
-    NSString *dayString;
-    switch (dayNumber) {
-        case 1:
-            dayString = @"日";
-            break;
-        case 2:
-            dayString = @"月";
-            break;
-        case 3:
-            dayString = @"火";
-            break;
-        case 4:
-            dayString = @"水";
-            break;
-        case 5:
-            dayString = @"木";
-            break;
-        case 6:
-            dayString = @"金";
-            break;
-        case 7:
-            dayString = @"土";
-            break;
-            
-        default:
-            break;
-    }
-    return dayString;
-}
-
+//- (NSString *)changeIntegerToDayString:(NSInteger)dayNumber {
+//    NSString *dayString;
+//    switch (dayNumber) {
+//        case 1:
+//            dayString = @"日";
+//            break;
+//        case 2:
+//            dayString = @"月";
+//            break;
+//        case 3:
+//            dayString = @"火";
+//            break;
+//        case 4:
+//            dayString = @"水";
+//            break;
+//        case 5:
+//            dayString = @"木";
+//            break;
+//        case 6:
+//            dayString = @"金";
+//            break;
+//        case 7:
+//            dayString = @"土";
+//            break;
+//            
+//        default:
+//            break;
+//    }
+//    return dayString;
+//}
+//
 
 #pragma mark - Table view data source
 
@@ -234,9 +239,10 @@
     UILabel *timeLabel = (UILabel*)[cell viewWithTag:2];
     timeLabel.text = nowIndexPathDictionary[@"timeKey"];
     UILabel *dayLabel = (UILabel*)[cell viewWithTag:3];
-    //FIXME:ここに曜日
-    NSInteger dayFlags = [nowIndexPathDictionary[@"dayFlags"] integerValue];
-    dayLabel.text = [self changeIntegerToDayString:dayFlags];
+    //FIXME:ここに曜日（機能停止）
+//    NSInteger dayFlags = [nowIndexPathDictionary[@"dayFlags"] integerValue];
+//    dayLabel.text = [self changeIntegerToDayString:daysDataArray];
+    
     
     //Switch
     changeSwitch = (UISwitch*)[cell viewWithTag:4];

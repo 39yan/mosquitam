@@ -15,7 +15,7 @@ static OSStatus renderer(void *inRef,
                          UInt32 inBusNumber,
                          UInt32 inNumberFrames,
                          AudioBufferList *ioData);
-
+/*
 enum {
     None = 0,
     Sunday = 1 << 0,
@@ -27,6 +27,8 @@ enum {
     Saturday = 1 << 6,
     All = Sunday | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday
 };
+ */
+
 
 @interface PlusViewController : UIViewController<UITextFieldDelegate>{
     
@@ -64,14 +66,21 @@ enum {
     BOOL snzBool;
     BOOL fdinBool;
     
-//    BOOL sunBool;
-//    BOOL satBool;
+    BOOL sunBool;
+    BOOL monBool;
+    BOOL tueBool;
+    BOOL wedBool;
+    BOOL thuBool;
+    BOOL friBool;
+    BOOL satBool;
     
-    NSInteger dayFlags;
+//    NSInteger dayFlags;
     
     NSDate *dateTime;
     
     NSString *timeStr;
+    
+    NSMutableArray *daysDataArray;
     
 }
 

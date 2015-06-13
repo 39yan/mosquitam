@@ -21,6 +21,7 @@
     NSUserDefaults *saveData;
     NSMutableDictionary *saveDataDictionary;
     NSMutableArray *saveDataArray;
+    NSMutableArray *daysDataArray;
     
     BOOL isEdit;
     

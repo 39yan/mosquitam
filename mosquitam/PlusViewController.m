@@ -50,15 +50,31 @@
         
         saveDataArray = [NSMutableArray array];
     }
+    
+    daysDataArray = [[saveData arrayForKey:@"day"] mutableCopy];
+    
+    if (daysDataArray.count) {
+        
+        daysDataArray = [NSMutableArray array];
+    }
+
 //    NSLog(@"%@",saveDataArray);
     
     //初期設定
     reNameStr = @"Arelm";
     fqcStr = @"10000";
-    brtBool = @"1";
-    snzBool = @"1";
-    fdinBool = @"1";
-    dayFlags = All;
+    brtBool = false;
+    snzBool = false;
+    fdinBool = false;
+//    dayFlags = All;
+    sunBool = false;
+    monBool = false;
+    tueBool = false;
+    wedBool = false;
+    thuBool = false;
+    friBool = false;
+    satBool = false;
+    
     timeStr = @"12:00";
 }
 
@@ -113,32 +129,87 @@
 }
 
 -(IBAction)dateTapped:(UIButton *)sender{
-//    if (sender.tag == 1) {
-//        NSLog(@"日曜日");
-//        if (sunBool == true) {
-//            sunBool = false;
-//        }else{
-//            sunBool = true;
-//        }
-//        sunBool = !sunBool;
-//        dayFlags ^= Sunday;
-//    }else if (sender.tag == 7) {
-//        NSLog(@"土曜日");
-//        if (satBool == true) {
-//            satBool = false;
-//        }else{
-//            satBool = true;
-//        }
-//        satBool = !satBool;
-//        dayFlags ^= Saturday;
-//    }
+    if (sender.tag == 1) {
+        if (sunBool == true) {
+            sunBool = false;
+            sunBool = NO;
+            NSLog(@"日/OFF");
+        }else{
+            sunBool = true;
+            sunBool = YES;
+            NSLog(@"日/ON");
+        }
+    }else if (sender.tag == 2) {
+        if (monBool == true) {
+            monBool = false;
+            monBool = NO;
+            NSLog(@"月/OFF");
+        }else{
+            monBool = true;
+            monBool = YES;
+            NSLog(@"月/ON");
+        }
+    }else if (sender.tag == 3) {
+        if (tueBool == true) {
+            tueBool = false;
+            tueBool = NO;
+            NSLog(@"火/OFF");
+        }else{
+            tueBool = true;
+            tueBool = YES;
+            NSLog(@"火/ON");
+        }
+    }else if (sender.tag == 4) {
+        if (wedBool == true) {
+            wedBool = false;
+            wedBool = NO;
+            NSLog(@"水/OFF");
+        }else{
+            wedBool = true;
+            wedBool = YES;
+            NSLog(@"水/ON");
+        }
+    }else if (sender.tag == 5) {
+        if (thuBool == true) {
+            thuBool = false;
+            thuBool = NO;
+            NSLog(@"木/OFF");
+        }else{
+            thuBool = true;
+            thuBool = YES;
+            NSLog(@"木/ON");
+        }
+    }else if (sender.tag == 6) {
+        if (friBool == true) {
+            friBool = false;
+            friBool = NO;
+            NSLog(@"金/OFF");
+        }else{
+            friBool = true;
+            friBool = YES;
+            NSLog(@"金/ON");
+        }
+    }else if (sender.tag == 7) {
+        if (satBool == true) {
+            satBool = false;
+            satBool = NO;
+            NSLog(@"土/OFF");
+        }else{
+            satBool = true;
+            satBool = YES;
+            NSLog(@"土/ON");
+//        dayFlags ^= Satday;
+        }
+    }
     /*
     if (sender.tag) {
         dayFlags ^= 1 << (sender.tag -1);
     }
-     */
+    
     dayFlags = sender.tag;
     NSLog(@"%ld",dayFlags);
+    */
+    
 }
 
 -(IBAction)timeChanged{
@@ -146,8 +217,10 @@
     NSDateFormatter *time = [[NSDateFormatter alloc]init];
     time.dateFormat = @"HH:mm";
     
+//    NSLog("Time:%@",time);
+    
     timeStr = [time stringFromDate:timeDatePicker.date];
-    NSLog(@"%@",timeStr);
+//    NSLog(@"%@",timeStr);
     
 }
 -(IBAction)saveAlerm{
@@ -159,6 +232,15 @@
         reNameStr = reNameTextField.text;
     }
     
+    daysDataArray = [[NSMutableArray alloc] initWithCapacity:0];
+    [daysDataArray addObject:[NSNumber numberWithBool:sunBool]];
+    [daysDataArray addObject:[NSNumber numberWithBool:monBool]];
+    [daysDataArray addObject:[NSNumber numberWithBool:tueBool]];
+    [daysDataArray addObject:[NSNumber numberWithBool:wedBool]];
+    [daysDataArray addObject:[NSNumber numberWithBool:thuBool]];
+    [daysDataArray addObject:[NSNumber numberWithBool:friBool]];
+    [daysDataArray addObject:[NSNumber numberWithBool:satBool]];
+    
     saveDataDictionary = [NSMutableDictionary dictionary];
     [saveDataDictionary setObject:reNameStr forKey:@"reNameStr"]; //tag:1
     [saveDataDictionary setObject:fqcStr forKey:@"frequencyKey"];
@@ -167,7 +249,10 @@
     [saveDataDictionary setObject:[NSNumber numberWithBool:snzBool] forKey:@"snzKey"];
     [saveDataDictionary setObject:[NSNumber numberWithBool:fdinBool] forKey:@"fdinKey"];
     
-    [saveDataDictionary setObject:[NSNumber numberWithInteger:dayFlags] forKey:@"dayFlags"]; //tag3
+    
+//    [saveDataDictionary setObject:[NSNumber numberWithInteger:dayFlags] forKey:@"dayFlags"]; //tag3
+    [saveDataDictionary setObject:daysDataArray forKey:@"daysDataKey"];
+    
     [saveDataDictionary setObject:timeStr forKey:@"timeKey"]; //tag:2
 #ifdef DEBUG
     NSLog(@"%@",saveDataDictionary);
@@ -176,6 +261,7 @@
     saveData = [NSUserDefaults standardUserDefaults];
    
     [saveDataArray addObject:saveDataDictionary];
+    
     
     [saveData setObject:saveDataArray forKey:@"list"];
     [saveData synchronize]; //ここまでで保存
